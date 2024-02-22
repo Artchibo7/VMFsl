@@ -1,3 +1,6 @@
+<?php
+include "./includes/header.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de réservation Music Vercors Festival</title>
   <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/administrateur.css">
   <script src="./assets/script.js" defer></script>
 </head>
 <body>
@@ -123,6 +127,9 @@
         <input type="submit" name="soumission" class="bouton" value="Réserver">
     </fieldset>
   </form>
+  <?php
+  include "./includes/footer.php";
+  ?>
   <script src="script.js"></script>
 </body>
 </html>
