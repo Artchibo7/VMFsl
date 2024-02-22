@@ -12,12 +12,13 @@ class User{
     
     function __construct((string $nom, string $prenom, string $email, int|string $telephone, string $adresse, int|string $id = "à créer", $role = "user"))
     {
-        $this->getId($id);
-        $this->getNom($nom);
-        $this->getPrenom($prenom);
-        $this->getEmail($email);
-        $this->getTelephone($telephone);
-        $this->getAdresse($adresse);
+        $this->setId($id);
+        $this->setNom($nom);
+        $this->setPrenom($prenom);
+        $this->setEmail($email);
+        $this->setTelephone($telephone);
+        $this->setAdresse($adresse);
+        $this->setRole($role);
     }
 
     public function getId():int{
@@ -102,4 +103,16 @@ private function CreerNouvelId(){
         }
     }
     return $i;
+
+    public function getObjectToArray(): array{
+        return[
+            "id" => $this->getId(),
+            "nom" => $this->getNom(),
+            "prenom" => $this->getPrenom(),
+            "email" => $this->getEmail(),
+            "telephone" => $this->getTelephone(),
+            "adresse" => $this->getAdresse(),
+            "role" => $this->getRole()
+        ];
+    }
 }

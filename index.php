@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de réservation Music Vercors Festival</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/script.js" defer></script>
 </head>
 <body>
   <form action="traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
-      <input type="number" name="nombrePlaces" id="NombrePlaces" required>
+      <input type="number" name="nombrePlaces" id="NombrePlaces" required min="1" required>
       <h3>Réservation(s) en tarif réduit</h3>
       <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherTarifReduit()">
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
@@ -50,11 +50,7 @@
       <section class="tarifsReduits" id="tarifsReduits" style="display: none;">
       <input type="checkbox" name="pass1jourreduit" id="pass1jourreduit">
       <label for="pass1jourreduit">Pass 1 jour : 25€</label>
-<<<<<<< Updated upstream
       <input type="checkbox" name="passeGroupe1jour" id="passeGroupe1jour">
-=======
-      <input type="checkbox" name"passeGroupe1jour" id="passeGroupe1jour">
->>>>>>> Stashed changes
       <label for="passeGroupe1jour">Pass 1 jour pour un groupe de 5 adultes : 150€</label>
       <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit">
       <label for="pass2joursreduit">Pass 2 jours : 50€</label>
@@ -98,13 +94,13 @@
       <section id="casquesEnfants" style="display: none;">
         <h4>Voulez-vous louer un casque antibruit pour enfants* (2€ / casque) ?</h4>
         <label for="nombreCasquesEnfants">Nombre de casques souhaités :</label>
-        <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants">
+        <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants" required min="0">
         <p>*Dans la limite des stocks disponibles.</p>
       </section>
 
       <h3>Profitez de descentes en luge d'été à tarifs avantageux !</h3>
       <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
-      <input type="number" name="NombreLugesEte" id="NombreLugesEte">
+      <input type="number" name="NombreLugesEte" id="NombreLugesEte" required min="0">
 
       <div >
         <p class="bouton" id="btnSuivant2">Suivant</p>
