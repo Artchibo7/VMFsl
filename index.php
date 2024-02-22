@@ -50,7 +50,11 @@
       <section class="tarifsReduits" id="tarifsReduits" style="display: none;">
       <input type="checkbox" name="pass1jourreduit" id="pass1jourreduit">
       <label for="pass1jourreduit">Pass 1 jour : 25€</label>
+<<<<<<< Updated upstream
       <input type="checkbox" name="passeGroupe1jour" id="passeGroupe1jour">
+=======
+      <input type="checkbox" name"passeGroupe1jour" id="passeGroupe1jour">
+>>>>>>> Stashed changes
       <label for="passeGroupe1jour">Pass 1 jour pour un groupe de 5 adultes : 150€</label>
       <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit">
       <label for="pass2joursreduit">Pass 2 jours : 50€</label>
