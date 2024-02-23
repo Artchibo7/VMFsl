@@ -1,0 +1,78 @@
+header{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: yellowgreen;
+    background-image: url(./Images/banierheaderfestival.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 185px;
+    padding: 10px;
+    border: 5px solid #119041;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+  footer{
+    background-image: url(./Images/vercors-footer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 230px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #01020d;
+    font-style: italic;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: yellowgreen;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+  #reseaux{
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 2em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #119041;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.inte{
+    background-image: url(./Images/inet.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+.ytube{
+    background-image: url(./Images/youtube.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+.insta{
+    background-image: url(./Images/instag.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+.fbook{
+    background-image: url(./Images/fbook.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+  

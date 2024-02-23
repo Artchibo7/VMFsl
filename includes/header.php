@@ -7,8 +7,8 @@
 </head>
 <body>
     <header>
-        <h1>Vercors-Music-Festival</h1>
-        <button id="admin">Admin</button>
+        <h1></h1>
+        <button id="admin"></button>
     </header>
 </body>
 </html>

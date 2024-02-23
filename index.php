@@ -10,14 +10,15 @@ include "./includes/header.php";
 
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="stylesheet" href="./assets/administrateur.css">
+  <link rel="stylesheet" href="./assets/headfoot.css">
   <script src="./assets/script.js" defer></script>
+  <script src="./assets/admin.js" defer></script>
 </head>
 <body>
   <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
-      <input type="number" name="nombrePlaces" id="NombrePlaces" required min="1" required>
       <input type="number" name="nombrePlaces" id="NombrePlaces" required min="1" required>
       <h3>Réservation(s) en tarif réduit</h3>
       <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherMasquerTarifsReduits()">
@@ -57,10 +58,6 @@ include "./includes/header.php";
       <section class="tarifsReduits" id="tarifsReduits" style="display: none;" >
       <input type="checkbox" name="pass1jourreduit" id="pass1jourreduit">
       <label for="pass1jourreduit">Pass 1 jour : 25€</label>
-
-      <input type="checkbox" name="passeGroupe1jour" id="passeGroupe1jour">
-
-      <label for="passeGroupe1jour">Pass 1 jour pour un groupe de 5 adultes : 150€</label>
       <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit">
       <label for="pass2joursreduit">Pass 2 jours : 50€</label>
 
@@ -140,6 +137,8 @@ include "./includes/header.php";
         <input type="submit" name="soumission" class="bouton" value="Réserver">
     </fieldset>
   </form>
-  <script src="script.js"></script>
+  <?php
+  include "./includes/footer.php";
+  ?>
 </body>
 </html>

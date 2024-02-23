@@ -1,5 +1,6 @@
 <?php
 require "./configuration.php";
+require "./classes/reservation.php";
 require "./classes/Database.php";
 require "./classes/User.php";
 
@@ -24,8 +25,6 @@ if( isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["email"]) &&
     }
 
     $adresse = htmlspecialchars($_POST["adressePostale"]);
-
-
 }
 ?>
 
