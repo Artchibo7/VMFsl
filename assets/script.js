@@ -24,6 +24,23 @@ btnSuivant2.addEventListener('click', () => {
   fieldsetOptions.style.display = "none";
   fieldsetCoordonnees.style.display = "block";
 })
+//Au clic sur le bouton précédent on revient sur la section réservation
+let btnPrecedent = document.getElementById("btnPrecedent");
+
+btnPrecedent.addEventListener('click', () => {
+  fieldsetReservation.style.display = "block";
+  fieldsetOptions.style.display = "none";
+  fieldsetCoordonnees.style.display = "none";
+})
+
+//Au clic sur le 2ème bouton précédent on revient sur la section options
+let btnPrecedent2 = document.getElementById("btnPrecedent2");
+
+btnPrecedent2.addEventListener('click', () => {
+  fieldsetReservation.style.display = "none";
+  fieldsetOptions.style.display = "block";
+  fieldsetCoordonnees.style.display = "none";
+})
 
 //Afficher le choix de la date pour le pass 1 jour
 function choixDate1jour() {
@@ -100,13 +117,135 @@ function afficherMasquerTarifsReduits() {
   }
 }
 
+//Afficher le choix des jours PASS 1 JOUR REDUIT
+function choixDate1jourReduit() {
+  let checkboxPass1jourReduit = document.getElementById("pass1jourreduit");
+  let pass1jourDateSection = document.getElementById("pass1jourDateReduit");
+
+  pass1jourDateSection.style.display = checkboxPass1jourReduit.checked ? "block" : "none";
+}
+//Empêcher de cocher d'autres cases dans PASS 1 JOUR REDUIT
+document.addEventListener("DOMContentLoaded", function() {
+  let choixJour1reduit = document.getElementById("choixJour1reduit");
+  let choixJour2reduit = document.getElementById("choixJour2reduit");
+  let choixJour3reduit = document.getElementById("choixJour3reduit");
+//Empêcher de sélectionner plus d'une date 
+  choixJour1reduit.addEventListener("change", function() {
+    if (choixJour1reduit.checked) {
+      choixJour2reduit.checked = false;
+      choixJour3reduit.checked = false;
+    }
+  });
+//Empêcher de sélectionner plus d'une date 
+  choixJour2reduit.addEventListener("change", function() {
+    if (choixJour2reduit.checked) {
+      choixJour1reduit.checked = false;
+      choixJour3reduit.checked = false;
+    }
+  });
+//Empêcher de sélectionner plus d'une date 
+  choixJour3reduit.addEventListener("change", function() {
+    if (choixJour3reduit.checked) {
+      choixJour1reduit.checked = false;
+      choixJour2reduit.checked = false;
+    }
+  });
+});
+
+//Afficher le choix des jours PASS 2 JOURS REDUIT
+function choixDate2joursReduit() {
+  let checkboxPass2joursReduit = document.getElementById("pass2joursreduit");
+  let pass2joursDateSection = document.getElementById("pass2joursDateReduit");
+
+  pass2joursDateSection.style.display = checkboxPass2joursReduit.checked ? "block" : "none";
+}
+
+//Empêcher de sélectionner plusieurs jours PASS 2 JOURS REDUIT
+document.addEventListener("DOMContentLoaded", function() {
+  let choixJour12reduit = document.getElementById("choixJour12reduit");
+  let choixJour23reduit = document.getElementById("choixJour23reduit");
+//Empêcher de sélectionner plus d'une date 
+  choixJour12reduit.addEventListener("change", function() {
+    if (choixJour12reduit.checked) {
+      choixJour23reduit.checked = false;
+    }
+  });
+//Empêcher de sélectionner plus d'une date 
+  choixJour23reduit.addEventListener("change", function() {
+    if (choixJour23reduit.checked) {
+      choixJour12reduit.checked = false;
+    }
+  });
+});
+
+//Cocher seulement 1 case dans la section "enfants"
+choixJour23reduit.addEventListener("change", function() {
+  if (choixJour23reduit.checked) {
+    choixJour12reduit.checked = false;
+  }
+});
+
 //Afficher la réservation de casques si la checkbox "enfants" est cochée
 function afficherCasques() {
-  let checkboxEnfants = document.getElementById("enfantsOui");
+  let checkboxEnfantsOui = document.getElementById("enfantsOui");
   let sectionCasquesEnfants = document.getElementById("casquesEnfants");
 
-  sectionCasquesEnfants.style.display = checkboxEnfants.checked ? "block" : "none";
+  sectionCasquesEnfants.style.display = checkboxEnfantsOui.checked ? "block" : "none";
 };
 
+//Sélectionner OUI ou NON dans la section "enfants"
+let checkboxEnfantsOui = document.getElementById("enfantsOui");
+let checkboxEnfantsNon = document.getElementById("enfantsNon");
+
+checkboxEnfantsOui.addEventListener("change", function() {
+  if (checkboxEnfantsOui.checked) {
+    checkboxEnfantsNon.checked = false;
+  }
+});
+
+checkboxEnfantsNon.addEventListener("change", function() {
+  if (checkboxEnfantsNon.checked) {
+    checkboxEnfantsOui.checked = false;
+  }
+});
+
+//Sélectionner réservation tentes et emplacements 
 
 
+
+
+
+
+// //Vérification champs
+// document.addEventListener("DOMContentLoaded", function () {
+  
+  // function verifierChamps() {
+    
+  //   let nombrePlaces = document.getElementById("nombrePlaces").value;
+  //   let choixJour1 = document.getElementById("choixJour1").checked;
+  //   let choixJour2 = document.getElementById("choixJour2").checked;
+  //   let choixJour3 = document.getElementById("choixJour3").checked;
+  //   let choixJour12 = document.getElementById("choixJour12").checked;
+  //   let choixJour23 = document.getElementById("choixJour23").checked;
+  //   let choixJour1reduit = document.getElementById("choixJour1reduit").checked;
+  //   let choixJour2reduit = document.getElementById("choixJour2reduit").checked;
+  //   let choixJour3reduit = document.getElementById("choixJour3reduit").checked;
+
+  //   //Vérifier que les champs ne sont pas vides
+  //   if (nombrePlaces === "" || 
+  //       (choixJour1 && !choixJour2 && !choixJour3) || 
+  //       (choixJour2 && !choixJour1 && !choixJour3) || 
+  //       (choixJour3 && !choixJour1 && !choixJour2) ||
+  //       (choixJour12 && !choixJour23) ||
+  //       (choixJour23 && !choixJour12) ||
+  //       (choixJour1reduit && !choixJour2reduit && !choixJour3reduit) ||
+  //       (choixJour2reduit && !choixJour1reduit && !choixJour3reduit) ||
+  //       (choixJour3reduit && !choixJour1reduit && !choixJour2reduit)
+  //      ) {
+
+  //   alert("Veuillez remplir tous les champs avant de passer à la page suivante.");
+
+  //   }
+    // if (btnSuivant1) {
+    //   btnSuivant1.addEventListener("click", verifierChamps())
+//     //     }

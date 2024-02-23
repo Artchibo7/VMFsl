@@ -56,7 +56,7 @@ include "./includes/header.php";
 
       <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
       <section class="tarifsReduits" id="tarifsReduits" style="display: none;" >
-      <input type="checkbox" name="pass1jourreduit" id="pass1jourreduit">
+      <input type="checkbox" name="pass1jourreduit" id="pass1jourreduit" onclick="choixDate1jourReduit()">
       <label for="pass1jourreduit">Pass 1 jour : 25€</label>
       <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit">
       <label for="pass2joursreduit">Pass 2 jours : 50€</label>
@@ -74,7 +74,7 @@ include "./includes/header.php";
 
       <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
       <div >
-        <p class="bouton "id="btnSuivant1">Suivant</p>
+        <button onclick="verifierChamps()" class="bouton "id="btnSuivant1">Suivant</button>
       </div>
       
     </fieldset>
@@ -102,7 +102,7 @@ include "./includes/header.php";
 
       <h3>Venez-vous avec des enfants ?</h3>
       <input type="checkbox" name="enfantsOui" id="enfantsOui"onclick="afficherCasques()"><label for="enfantsOui"  >Oui</label> 
-      <input type="checkbox" name="enfantsNon"><label for="enfantsNon">Non</label>
+      <input type="checkbox" name="enfantsNon" id="enfantsNon"><label for="enfantsNon">Non</label>
 
       <!-- Si oui, afficher : -->
       <section id="casquesEnfants" style="display: none;">
@@ -115,10 +115,9 @@ include "./includes/header.php";
       <h3>Profitez de descentes en luge d'été à tarifs avantageux !</h3>
       <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
       <input type="number" name="NombreLugesEte" id="NombreLugesEte" required min="0">
-
-      <div >
-        <p class="bouton" id="btnSuivant2">Suivant</p>
-      </div>
+      
+        <p class="bouton" id="btnPrecedent">Précédent</p><p class="bouton" id="btnSuivant2">Suivant</p>
+      
 
     </fieldset>
     <fieldset id="coordonnees">
@@ -134,7 +133,7 @@ include "./includes/header.php";
         <label for="adressePostale">Adresse Postale :</label>
         <input type="text" name="adressePostale" id="adressePostale" required>
         <br>
-        <input type="submit" name="soumission" class="bouton" value="Réserver">
+        <p class="bouton" id="btnPrecedent2">Précédent</p> <input type="submit" name="soumission" class="bouton" id=btnReserver value="Réserver">
     </fieldset>
   </form>
   <?php

@@ -56,8 +56,7 @@ input[type="number"]{
   }
   
   .bouton {
-    /* height : 60px; */
-    width : 80px;
+    width : 100px;
     background-color: #21b379;
     text-align: center;
     color: #fff;
@@ -70,10 +69,5 @@ input[type="number"]{
   .bouton:hover {
     background-color: #0cae75;
   }
-  
-  #btnSuivant1,
-  #btnSuivant2 {
-    text-align: center;
-  }
- 
+
  
