@@ -12,7 +12,7 @@ include "./includes/header.php";
   <script src="./assets/script.js" defer></script>
 </head>
 <body>
-  <form action="traitement.php" id="inscription" method="POST">
+  <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>

@@ -15,7 +15,7 @@ final class Database{
         }
 
         fclose($connexion);
-        return $users
+        return $users;
     }
 
     public function getThisUsersById(int $id): User|bool{
@@ -38,19 +38,4 @@ final class Database{
         return $return;
     }
 
-    public function deleteThisUser(int $iduser): bool{
-        if ($this->getUserById($Iduser)){
-            $users = this->getAllUsers();
-            $connexion = fopen($this->_DB, "wb");
-            foreach($users as $user){
-                if($user->getId() !==$Iduser){
-                    $return = fputcsv($connexion; $user->getObjectToArray());
-                }
-            }
-            fclose($connexion);
-            return true;
-        }else{
-            return false;
-        }
-    }
 }
