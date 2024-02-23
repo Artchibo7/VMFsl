@@ -4,20 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de réservation Music Vercors Festival</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/script.js" defer></script>
 </head>
 <body>
   <form action="traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
-      <input type="number" name="nombrePlaces" id="NombrePlaces" required>
+      <input type="number" name="nombrePlaces" id="NombrePlaces" required min="1" required>
       <h3>Réservation(s) en tarif réduit</h3>
-      <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherTarifReduit()">
+      <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherMasquerTarifsReduits()">
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
       <h3>Choisissez votre formule :</h3>
+        <div id = "tarifsNormaux">
       <input type="checkbox" name="pass1jour" id="pass1jour" onclick="choixDate1jour()">
       <label for="pass1jour">Pass 1 jour : 40€</label>
 
@@ -44,20 +45,35 @@
 
       <input type="checkbox" name="pass3jours" id="pass3jours">
       <label for="pass3jours">Pass 3 jours : 100€</label>
-
+</div>
 
       <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
-      <section class="tarifsReduits" id="tarifsReduits" style="display: none;">
+      <section class="tarifsReduits" id="tarifsReduits" style="display: none;" >
       <input type="checkbox" name="pass1jourreduit" id="pass1jourreduit">
       <label for="pass1jourreduit">Pass 1 jour : 25€</label>
-<<<<<<< Updated upstream
-      <input type="checkbox" name="passeGroupe1jour" id="passeGroupe1jour">
-=======
-      <input type="checkbox" name"passeGroupe1jour" id="passeGroupe1jour">
->>>>>>> Stashed changes
-      <label for="passeGroupe1jour">Pass 1 jour pour un groupe de 5 adultes : 150€</label>
-      <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit">
+
+      <section id="pass1jourDateReduit" style="display: none;">
+        <input type="checkbox" name="choixJour1reduit" id="choixJour1reduit">
+        <label for="choixJour1reduit">Pass pour la journée du 01/07</label>
+        <input type="checkbox" name="choixJour2reduit" id="choixJour2reduit">
+        <label for="choixJour2reduit">Pass pour la journée du 02/07</label>
+        <input type="checkbox" name="choixJour3reduit" id="choixJour3reduit">
+        <label for="choixJour3reduit">Pass pour la journée du 03/07</label>
+      </section>
+      
+      <!-- <input type="checkbox" name="passeGroupe1jour" id="passeGroupe1jour">
+      <label for="passeGroupe1jour">Pass 1 jour pour un groupe de 5 adultes : 150€</label> -->
+      
+      <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit" onclick="choixDate2joursReduit()">
       <label for="pass2joursreduit">Pass 2 jours : 50€</label>
+
+      <section id="pass2joursDateReduit" style="display: none;">
+        <input type="checkbox" name="choixJour12reduit" id="choixJour12reduit">
+        <label for="choixJour12reduit">Pass pour deux journées du 01/07 au 02/07</label>
+        <input type="checkbox" name="choixJour23reduit" id="choixJour23reduit">
+        <label for="choixJour23reduit">Pass pour deux journées du 02/07 au 03/07</label>
+      </section>
+
       <input type="checkbox" name="pass3joursreduit" id="pass3joursreduit">
       <label for="pass3joursreduit">Pass 3 jours : 65€</label>
      </section>
@@ -98,13 +114,13 @@
       <section id="casquesEnfants" style="display: none;">
         <h4>Voulez-vous louer un casque antibruit pour enfants* (2€ / casque) ?</h4>
         <label for="nombreCasquesEnfants">Nombre de casques souhaités :</label>
-        <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants">
+        <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants" required min="0">
         <p>*Dans la limite des stocks disponibles.</p>
       </section>
 
       <h3>Profitez de descentes en luge d'été à tarifs avantageux !</h3>
       <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
-      <input type="number" name="NombreLugesEte" id="NombreLugesEte">
+      <input type="number" name="NombreLugesEte" id="NombreLugesEte" required min="0">
 
       <div >
         <p class="bouton" id="btnSuivant2">Suivant</p>
@@ -127,6 +143,5 @@
         <input type="submit" name="soumission" class="bouton" value="Réserver">
     </fieldset>
   </form>
-  <script src="script.js"></script>
 </body>
 </html>

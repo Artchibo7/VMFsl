@@ -7,7 +7,7 @@ class User{
     private $_email;
     private $_telephone;
     private $_adresse;
-    private $_role
+    private $_role;
     
     
     function __construct((string $nom, string $prenom, string $email, int|string $telephone, string $adresse, int|string $id = "à créer", $role = "user"))
