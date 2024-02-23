@@ -1,17 +1,23 @@
+<?php
+include "./includes/header.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de réservation Music Vercors Festival</title>
+
   <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/administrateur.css">
   <script src="./assets/script.js" defer></script>
 </head>
 <body>
-  <form action="traitement.php" id="inscription" method="POST">
+  <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
+      <input type="number" name="nombrePlaces" id="NombrePlaces" required min="1" required>
       <input type="number" name="nombrePlaces" id="NombrePlaces" required min="1" required>
       <h3>Réservation(s) en tarif réduit</h3>
       <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherMasquerTarifsReduits()">
@@ -52,19 +58,10 @@
       <input type="checkbox" name="pass1jourreduit" id="pass1jourreduit">
       <label for="pass1jourreduit">Pass 1 jour : 25€</label>
 
-      <section id="pass1jourDateReduit" style="display: none;">
-        <input type="checkbox" name="choixJour1reduit" id="choixJour1reduit">
-        <label for="choixJour1reduit">Pass pour la journée du 01/07</label>
-        <input type="checkbox" name="choixJour2reduit" id="choixJour2reduit">
-        <label for="choixJour2reduit">Pass pour la journée du 02/07</label>
-        <input type="checkbox" name="choixJour3reduit" id="choixJour3reduit">
-        <label for="choixJour3reduit">Pass pour la journée du 03/07</label>
-      </section>
-      
-      <!-- <input type="checkbox" name="passeGroupe1jour" id="passeGroupe1jour">
-      <label for="passeGroupe1jour">Pass 1 jour pour un groupe de 5 adultes : 150€</label> -->
-      
-      <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit" onclick="choixDate2joursReduit()">
+      <input type="checkbox" name="passeGroupe1jour" id="passeGroupe1jour">
+
+      <label for="passeGroupe1jour">Pass 1 jour pour un groupe de 5 adultes : 150€</label>
+      <input type="checkbox" name="pass2joursreduit" id="pass2joursreduit">
       <label for="pass2joursreduit">Pass 2 jours : 50€</label>
 
       <section id="pass2joursDateReduit" style="display: none;">
@@ -143,5 +140,6 @@
         <input type="submit" name="soumission" class="bouton" value="Réserver">
     </fieldset>
   </form>
+  <script src="script.js"></script>
 </body>
 </html>

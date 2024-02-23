@@ -10,14 +10,15 @@ class User{
     private $_role;
     
     
-    function __construct((string $nom, string $prenom, string $email, int|string $telephone, string $adresse, int|string $id = "à créer", $role = "user"))
+    function __construct(string $nom, string $prenom, string $email, int|string $telephone, string $adresse, int|string $id = "à créer", $role = "user")
     {
-        $this->getId($id);
-        $this->getNom($nom);
-        $this->getPrenom($prenom);
-        $this->getEmail($email);
-        $this->getTelephone($telephone);
-        $this->getAdresse($adresse);
+        $this->setId($id);
+        $this->setNom($nom);
+        $this->setPrenom($prenom);
+        $this->setEmail($email);
+        $this->setTelephone($telephone);
+        $this->setAdresse($adresse);
+        $this->setRole($role);
     }
 
     public function getId():int{
@@ -31,48 +32,48 @@ class User{
         }
     }
 
-    public function getNom(): string{
+    public function getNom(){
         return $this->_nom;
     }
-    public function setNom(): string{
+    public function setNom($nom){
         $this->_nom = $nom;
     }
 
-    public function getPrenom(): string{
+    public function getPrenom(){
         return $this->_prenom;
     }
-    public function setPrenom(): string{
+    public function setPrenom($prenom){
         $this->_prenom = $prenom;
     }
 
-    public function getEmail(): string{
+    public function getEmail(){
         return $this->_email;
     }
-    public function setEmail(): string{
+    public function setEmail($email){
         $this->_email = $email;
     }
 
-    public function getTelephone(): int{
+    public function getTelephone(){
         return $this->_telephone;
     }
-    public function setTelephone(): int{
+    public function setTelephone($telephone){
         $this->_telephone = $telephone;
     }
 
-    public function getAdresse(): string{
+    public function getAdresse(){
         return $this->_adresse;
     }
-    public function setAdresse(): string{
+    public function setAdresse($adresse){
         $this->_adresse = $adresse;
-    }public function getRole(): string{
+    }public function getRole(){
         return $this->_role;
     }
-    public function setRole(): void{
+    public function setRole($role): void{
         $this->_role = $role;
     }
 
 
-}
+
 
 public function isAdmin(){
     if($this->getRole() == "admin"){
@@ -82,24 +83,38 @@ public function isAdmin(){
     }
 }
 
-private function CreerNouvelId(){
-    $Database = new Database();
-    $users = $Database->getAllUsers();
 
-    $IDs = [];
+    private function CreerNouvelId(){
+        $Database = new Database();
+        $users = $Database->getAllUsers();
 
-    foreach($users as $user){
-        $IDs[] = $user->getId();
-    }
+        $IDs = [];
 
-    $i = 1;
-    $unique = false;
-    while($unique === false){
-        if (in_array($i, $IDs)){
-            $i ++;
-        }else{
-            $unique = true;
+        foreach($users as $user){
+            $IDs[] = $user->getId();
         }
+
+        $i = 1;
+        $unique = false;
+        while($unique === false){
+            if (in_array($i, $IDs)){
+                $i ++;
+            }else{
+                $unique = true;
+            }
+        }
+        return $i;
+
     }
-    return $i;
+    public function getObjectToArray(): array{
+        return[
+            "id" => $this->getId(),
+            "nom" => $this->getNom(),
+            "prenom" => $this->getPrenom(),
+            "email" => $this->getEmail(),
+            "telephone" => $this->getTelephone(),
+            "adresse" => $this->getAdresse(),
+            "role" => $this->getRole()
+        ];
+    }
 }
