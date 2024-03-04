@@ -1,7 +1,14 @@
+Consignes de l'exercice
+
 Contexte du projet
-En tant que developpeur full stack, vous utiliserez le HTML fourni en lui ajoutant de JS et du CSS, puis vous réaliserez le traitement et l'enregistrement des données en back.
+Il s'agit de faire une interface pour prendre les réservations des festivaliers, et faire en sorte que chacun puisse consulter ou annuler sa réservation, et que les admins puissent toutes les voir. Le formulaire vous est fourni, vous devez l'animer et en traiter les informations.
+Vous utiliserez le HTML fourni en lui ajoutant de JS et du CSS, puis vous réaliserez le traitement et l'enregistrement des données en back.
+
+​
 
 Niveau 1 (suffisant pour valider les compétences)
+
+​
 
 COTÉ FRONT
 
@@ -16,6 +23,9 @@ Vous recevez les données en post, vous devez les analyser avant toute utilisati
 Si le formulaire n'est pas complet, on le renvoie, avec une erreur.
 Vous traiterez les données reçues, et lorsque tout le formulaire sera rempli et soumis, alors vous l'enregistrerez dans un fichier CSV.
 Une fois que tout est validé, vous renvoyez à l'utilisateur un message récapitulatif avec ses informations choisies, et le total du prix à payer.
+​
+
+​
 
 Niveau 2
 
@@ -26,6 +36,7 @@ Chaque utilisateur aura un identifiant unique.
 Dans le fichier CSV des réservations, on viendra ajouter l'identifiant qui permettra de retrouver toutes les réservations d'un utilisateur.
 L'utilisateur pourra, une fois connecté, voir sa/ses réservation(s), la supprimer, et se déconnecter.
 ​
+
 Niveau 3
 
 Ajouter, dans le fichier CSV des utilisateurs, une information pour savoir si l'utilisateur est admin ou non.
